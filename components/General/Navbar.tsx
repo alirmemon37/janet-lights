@@ -28,6 +28,11 @@ const Navbar = () => {
                 Home
               </span>
             </Link>
+            <Link href="/products">
+              <span className="hover:text-[#ccc] hover:cursor-pointer">
+                Products
+              </span>
+            </Link>
             <Link href="/about">
               <span className="hover:text-[#ccc] hover:cursor-pointer">
                 About
@@ -36,11 +41,6 @@ const Navbar = () => {
             <Link href="/contact">
               <span className="hover:text-[#ccc] hover:cursor-pointer">
                 Contact
-              </span>
-            </Link>
-            <Link href="/store">
-              <span className="hover:text-[#ccc] hover:cursor-pointer">
-                Store
               </span>
             </Link>
           </div>

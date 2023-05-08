@@ -48,6 +48,11 @@ const MobileNavbar = () => {
                     <span className="hover:cursor-pointer">Home</span>
                   </div>
                 </Link>
+                <Link href="/products" onClick={() => setShowMenu(false)}>
+                  <div className="hover:bg-primary hover:text-[#fff] hover:font-semibold py-3 px-8">
+                    <span className="hover:cursor-pointer">Products</span>
+                  </div>
+                </Link>
                 <Link href="/about" onClick={() => setShowMenu(false)}>
                   <div className="hover:bg-primary hover:text-[#fff] hover:font-semibold py-3 px-8">
                     <span className="hover:cursor-pointer">About</span>
@@ -56,11 +61,6 @@ const MobileNavbar = () => {
                 <Link href="/contact" onClick={() => setShowMenu(false)}>
                   <div className="hover:bg-primary hover:text-[#fff] hover:font-semibold py-3 px-8">
                     <span className="hover:cursor-pointer">Contact</span>
-                  </div>
-                </Link>
-                <Link href="/store" onClick={() => setShowMenu(false)}>
-                  <div className="hover:bg-primary hover:text-[#fff] hover:font-semibold py-3 px-8">
-                    <span className="hover:cursor-pointer">Store</span>
                   </div>
                 </Link>
               </div>
