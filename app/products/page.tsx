@@ -5,6 +5,17 @@ import ProductCardList from "@/components/Product/ProductCardList";
 import ProductNavItem from "@/components/Product/ProductNavItem";
 import Product from "@/types/types";
 
+const productCategories = [
+  {
+    value: "chandelier",
+    label: "Chandelier",
+  },
+  {
+    value: "cob",
+    label: "COB",
+  },
+];
+
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -42,16 +53,16 @@ const Products = () => {
           active={activeCategory === ""}
           onClick={() => handleCategoryClick("")}
         />
-        <ProductNavItem
-          label="Chandelier"
-          active={activeCategory === "Chandelier"}
-          onClick={() => handleCategoryClick("Chandelier")}
-        />
-        <ProductNavItem
-          label="COB"
-          active={activeCategory === "COB"}
-          onClick={() => handleCategoryClick("COB")}
-        />
+        {productCategories.map((category, index) => {
+          return (
+            <ProductNavItem
+              key={index}
+              label={category.label}
+              active={activeCategory === category.value}
+              onClick={() => handleCategoryClick(category.value)}
+            />
+          );
+        })}
       </div>
       <div>
         <ProductCardList
