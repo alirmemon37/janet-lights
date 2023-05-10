@@ -65,7 +65,7 @@ const Create = () => {
   };
 
   return (
-    <div className="py-4 relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 w-full flex-start">
+    <section className="w-full max-w-full flex-start flex-col">
       <h2 className="mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-left">
         <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
           Add new product
@@ -148,7 +148,7 @@ const Create = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#000] border-[1px] text-[20px] font-semibold rounded-xl px-5 py-1.5 text-white blue_gradient"
+            className="bg-[#000] border-[1px] text-[20px] font-semibold rounded-xl px-5 py-1.5 text-white"
           >
             <span>{isSubmitting ? "Adding" : "Add"} product</span>
           </button>
@@ -182,7 +182,7 @@ const Create = () => {
           Product Added Successfully!
         </Alert>
       </Snackbar>
-    </div>
+    </section>
   );
 };
 
