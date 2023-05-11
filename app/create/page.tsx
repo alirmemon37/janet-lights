@@ -7,6 +7,7 @@ import FormRadio from "@/components/Create/FormRadio";
 import { AiOutlineCamera } from "react-icons/ai";
 import { uploadFileToFirebaseAndGetUrl } from "@/utils/firebase";
 import { Alert, Backdrop, CircularProgress, Snackbar } from "@mui/material";
+import { productCategoryRadioOptions, productCompanyRadioOptions } from "@/utils/constants";
 
 const Create = () => {
   const [formData, setFormData] = useState<Product | null>({});
@@ -66,8 +67,8 @@ const Create = () => {
 
   return (
     <section className="w-full max-w-full flex-start flex-col">
-      <h2 className="mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-left">
-        <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+      <h2 className="head_text">
+        <span className="blue_gradient">
           Add new product
         </span>
       </h2>
@@ -124,22 +125,14 @@ const Create = () => {
             />
           </div>
           <FormRadio
-            options={[
-              { value: "chandelier", label: "Chandelier" },
-              { value: "cob", label: "COB" },
-              { value: "other", label: "Other" },
-            ]}
+            options={productCategoryRadioOptions}
             label="Product category"
             name="category"
             onChange={handleProductDataChange}
             required
           />
           <FormRadio
-            options={[
-              { value: "janet", label: "Janet" },
-              { value: "havells", label: "Havells" },
-              { value: "other", label: "Other" },
-            ]}
+            options={productCompanyRadioOptions}
             label="Product company"
             name="company"
             onChange={handleProductDataChange}

@@ -9,7 +9,7 @@ interface ProductNavItemProps {
 const ProductNavItem = ({ label, active, onClick }: ProductNavItemProps) => {
   return (
     <div
-      className={`cursor-pointer ${active ? "font-bold" : ""}`}
+      className={`cursor-pointer ${active ? "font-bold orange_gradient" : ""}`}
       onClick={onClick}
     >
       {label}
