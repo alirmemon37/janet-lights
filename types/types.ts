@@ -3,6 +3,7 @@ interface Product {
   category?: string;
   productImageUrl?: string;
   company?: string;
+  readonly id?: string;
 }
 
 export default Product;

@@ -16,7 +16,9 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      const response = await fetch("/api/products");
+      const response = await fetch("/api/products", {
+        cache: "force-cache"
+      });
       const products = await response.json();
       setProducts(products);
       setLoading(false);
