@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function getProductData(productId: string) {
+async function getProductData(productId: string) {
   const response = await fetch(
     `http://localhost:3000/api/products/${productId}`
   );
