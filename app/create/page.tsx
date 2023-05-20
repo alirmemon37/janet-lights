@@ -4,10 +4,14 @@ import FormInput from "@/components/Create/FormInput";
 import React, { useState } from "react";
 import Product from "@/types/types";
 import FormRadio from "@/components/Create/FormRadio";
+import FormTextarea from "@/components/Create/FormTextarea";
 import { AiOutlineCamera } from "react-icons/ai";
 import { uploadFileToFirebaseAndGetUrl } from "@/utils/firebase";
 import { Alert, Backdrop, CircularProgress, Snackbar } from "@mui/material";
-import { productCategoryRadioOptions, productCompanyRadioOptions } from "@/utils/constants";
+import {
+  productCategoryRadioOptions,
+  productCompanyRadioOptions,
+} from "@/utils/constants";
 
 const Create = () => {
   const [formData, setFormData] = useState<Product | null>({});
@@ -17,7 +21,7 @@ const Create = () => {
   const [isSnackbarOpen, setIsSnackbarOpen] = useState<boolean>(false);
 
   const handleProductDataChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -68,13 +72,11 @@ const Create = () => {
   return (
     <section className="w-full max-w-full flex-start flex-col">
       <h2 className="head_text">
-        <span className="blue_gradient">
-          Add new product
-        </span>
+        <span className="blue_gradient">Add new product</span>
       </h2>
       <p className="desc text-left max-w-md">
-        Add a new product than to the Janet Lights store. Please fill out the
-        form below.
+        Add a new product to the Janet Lights store. Please fill out the form
+        below.
       </p>
       <form
         onSubmit={handleProductSubmit}
@@ -138,6 +140,21 @@ const Create = () => {
             onChange={handleProductDataChange}
             required
           />
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="description"
+              className="font-satoshi font-semibold text-lg text-gray-700"
+            >
+              Product Description
+            </label>
+            <FormTextarea
+              id="description"
+              name="description"
+              onChange={handleProductDataChange}
+              value={formData?.description || ""}
+              className="resize-none"
+            />
+          </div>
           <button
             type="submit"
             disabled={isSubmitting}

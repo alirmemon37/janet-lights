@@ -1,9 +1,10 @@
 interface Product {
+  readonly id?: string;
   name?: string;
   category?: string;
   productImageUrl?: string;
   company?: string;
-  readonly id?: string;
+  description?: string;
 }
 
 export default Product;

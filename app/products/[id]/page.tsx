@@ -10,14 +10,14 @@ interface PageProps {
   };
 }
 
-export async function generateStaticParams() {
-  const response = await fetch("/api/products");
-  const products: Product[] = await response.json();
+// export async function generateStaticParams() {
+//   const response = await fetch("/api/products");
+//   const products: Product[] = await response.json();
 
-  return products.map((product: Product) => ({
-    id: product.id,
-  }));
-}
+//   return products.map((product: Product) => ({
+//     id: product.id,
+//   }));
+// }
 
 async function getProductData(productId: string) {
   const response = await fetch(`/api/products/${productId}`);
