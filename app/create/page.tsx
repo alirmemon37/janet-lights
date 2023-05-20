@@ -158,7 +158,7 @@ const Create = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#000] border-[1px] text-[20px] font-semibold rounded-xl px-5 py-1.5 text-white"
+            className="blue_gradient_btn"
           >
             <span>{isSubmitting ? "Adding" : "Add"} product</span>
           </button>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <section className="w-full flex-center flex-col">
@@ -14,6 +16,9 @@ export default function Home() {
         outdoor lights, and more to illuminate your surroundings with elegance
         and style.
       </p>
+      <Link href="/products">
+        <button className="mt-10 orange_gradient_btn">Find Your Light</button>
+      </Link>
     </section>
   );
 }

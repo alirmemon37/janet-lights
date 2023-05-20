@@ -20,22 +20,22 @@ const Navbar = () => {
         <div className="sm:flex  hidden">
           <div className="flex gap-3 md:gap-5">
             <Link href="/">
-              <span className="hover:text-[#ccc] hover:cursor-pointer">
+              <span className="nav_link">
                 Home
               </span>
             </Link>
             <Link href="/products">
-              <span className="hover:text-[#ccc] hover:cursor-pointer">
+              <span className="nav_link">
                 Products
               </span>
             </Link>
             <Link href="/about">
-              <span className="hover:text-[#ccc] hover:cursor-pointer">
+              <span className="nav_link">
                 About
               </span>
             </Link>
             <Link href="/contact">
-              <span className="hover:text-[#ccc] hover:cursor-pointer">
+              <span className="nav_link">
                 Contact
               </span>
             </Link>
