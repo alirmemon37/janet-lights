@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   })
 
-  const response = await fetch(`${apiEndpoint}/api/products`)
+  const response = await fetch(`${apiEndpoint}/products`)
   const products = await response.json()
   const productsRoutes = products.map((product: any) => {
     return {

@@ -6,6 +6,7 @@ import ProductNavItem from "@/components/Product/ProductNavItem";
 import Product from "@/types/types";
 import ProductLoader from "@/components/Product/ProductLoader";
 import { productNavCategories } from "@/utils/constants";
+import apiEndpoint from "@/utils/apiEndpoint";
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,7 +17,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      const response = await fetch("/api/products", { cache: "no-store" });
+      const response = await fetch(`${apiEndpoint}/products`, { cache: "no-store" });
       const products = await response.json();
       setProducts(products);
       setLoading(false);

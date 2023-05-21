@@ -12,6 +12,7 @@ import {
   productCategoryRadioOptions,
   productCompanyRadioOptions,
 } from "@/utils/constants";
+import apiEndpoint from "@/utils/apiEndpoint";
 
 const Create = () => {
   const [formData, setFormData] = useState<Product | null>({});
@@ -51,7 +52,7 @@ const Create = () => {
         productImageFile
       );
       const productImageUrl = productImage.uploadedToUrl;
-      const response = await fetch("/api/products/new", {
+      const response = await fetch(`${apiEndpoint}/products/new`, {
         method: "POST",
         body: JSON.stringify({ ...formData, productImageUrl }),
       });

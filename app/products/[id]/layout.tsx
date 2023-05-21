@@ -7,7 +7,7 @@ type Props = {
 };
 
 async function getProductData(productId: string) {
-  const response = await fetch(`${apiEndpoint}/api/products/${productId}`);
+  const response = await fetch(`${apiEndpoint}/products/${productId}`);
   if (!response.ok) {
     throw new Error("Product not found");
   }
