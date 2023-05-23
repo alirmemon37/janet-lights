@@ -18,6 +18,33 @@
   }
 }
 
+.contact_form {
+  @apply grid grid-cols-1 md:grid-cols-3 mt-10 w-full max-w-7xl gap-7 rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur bg-gradient-to-r from-amber-500 to-yellow-500 overflow-hidden
+}
+
+.contact_form_img {
+  background-image: linear-gradient(
+      to right bottom,
+      #eb974e59,
+      #e67d2259
+    ),
+    url("/assets/contact-chandelier.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .contact_form_img {
+    width: 100%;
+    height: 24rem;
+    grid-row: 1;
+  }
+}
+
+.contact_form_button {
+  @apply bg-[#45260a] text-white font-semibold py-2.5 px-7 rounded-xl transition duration-300 active:ring-8 active:ring-[#e67d2259] focus:ring-8 focus:ring-[#e67d2259] active:outline-none focus:outline-none
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;

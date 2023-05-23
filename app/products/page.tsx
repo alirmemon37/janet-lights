@@ -14,15 +14,15 @@ const Products = () => {
   const [activeCategory, setActiveCategory] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      const response = await fetch(`${apiEndpoint}/products`, { cache: "no-store" });
-      const products = await response.json();
-      setProducts(products);
-      setLoading(false);
-    };
+  const fetchProducts = async () => {
+    setLoading(true);
+    const response = await fetch(`${apiEndpoint}/products`);
+    const products = await response.json();
+    setProducts(products);
+    setLoading(false);
+  };
 
+  useEffect(() => {
     fetchProducts();
   }, []);
 

@@ -7,4 +7,11 @@ interface Product {
   description?: string;
 }
 
+export interface ContactFormData {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
+
 export default Product;
