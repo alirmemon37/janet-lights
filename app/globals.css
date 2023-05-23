@@ -94,6 +94,14 @@
   @apply rounded-lg border-2 border-black bg-transparent py-3 px-8 text-black transition-all hover:bg-black hover:text-white text-center text-base font-inter flex items-center justify-center duration-300;
 }
 
+.orange_gradient_btn {
+  @apply bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-yellow-500 hover:to-amber-500 text-white font-semibold py-2.5 px-7 rounded-full transition duration-300
+}
+
+.blue_gradient_btn {
+  @apply bg-gradient-to-r from-[#1c94f4] to-[#1273ea] hover:from-[#1273ea] hover:to-[#1c94f4] text-white font-semibold py-2.5 px-6 rounded-xl transition duration-300
+}
+
 .head_text {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
 }
@@ -155,6 +163,10 @@
 
 .dropdown_link {
   @apply text-xl font-inter text-gray-700 hover:text-gray-500 font-medium;
+}
+
+.nav_link {
+  @apply text-lg font-inter text-gray-700 hover:text-gray-500 font-medium;
 }
 
 /* productCard Component */

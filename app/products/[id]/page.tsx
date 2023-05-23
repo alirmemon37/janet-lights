@@ -1,7 +1,6 @@
-"use client"
-
 import ProductCard from "@/components/Product/ProductCard";
 import Product from "@/types/types";
+import apiEndpoint from "@/utils/apiEndpoint";
 import React from "react";
 
 interface PageProps {
@@ -11,7 +10,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch("/api/products");
+  const response = await fetch(`${apiEndpoint}/products`);
   const products: Product[] = await response.json();
 
   return products.map((product: Product) => ({
@@ -20,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 async function getProductData(productId: string) {
-  const response = await fetch(`/api/products/${productId}`);
+  const response = await fetch(`${apiEndpoint}/products/${productId}`);
   if (!response.ok) {
     throw new Error("Product not found");
   }

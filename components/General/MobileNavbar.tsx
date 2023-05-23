@@ -22,6 +22,13 @@ const MobileNavbar = () => {
               ></div>
               <div className="dropdown z-50">
                 <Link
+                  href="/"
+                  className="dropdown_link"
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  Home
+                </Link>
+                <Link
                   href="/products"
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
