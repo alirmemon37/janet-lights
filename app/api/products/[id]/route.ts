@@ -9,7 +9,6 @@ export const GET = async (
     const { id } = params;
     const productDocRef = doc(db, "Products", id);
     const productDoc = await getDoc(productDocRef);
-
     if (!productDoc.exists()) {
       return new Response("Product not found", { status: 404 });
     }

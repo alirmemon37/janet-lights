@@ -20,7 +20,6 @@ export default function Home() {
           outdoor lights, and more to illuminate your surroundings with elegance
           and style.
         </p>
-
         <button className="mt-10 orange_gradient_btn">
           <Link href="/products">Find Your Light</Link>
         </button>
