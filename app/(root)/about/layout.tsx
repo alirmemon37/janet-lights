@@ -1,5 +1,3 @@
-import Footer from "@/components/General/Footer";
-import Navbar from "@/components/General/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,11 +10,5 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-      <Footer />
-    </>
-  );
+  return <>{children}</>;
 }
