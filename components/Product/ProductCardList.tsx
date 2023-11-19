@@ -1,16 +1,25 @@
 import React from "react";
-import Product from "@/types/types";
 import ProductCard from "./ProductCard";
-import { Light } from "@/types/light";
+import { getLights } from "@/sanity/actions";
 
 interface Props {
-  data: Light[]
+  category: string | undefined;
 }
 
-const ProductCardList = ({ data }: Props) => {
+const ProductCardList = async ({ category }: Props) => {
+  const products = await getLights(category);
+
+  if (products.length === 0) {
+    return (
+      <div className="mt-16">
+        <p className="text-black text-2xl text-center font-bold">No Items Found</p>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 product_layout">
-      {data.map((product, index) => {
+      {products.map((product, index) => {
         return <ProductCard key={index} product={product} />;
       })}
     </div>

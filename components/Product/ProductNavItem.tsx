@@ -1,6 +1,6 @@
 interface Props {
   label: string;
-  active: boolean;
+  active?: boolean;
   onClick: () => void;
 }
 

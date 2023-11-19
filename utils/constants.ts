@@ -8,8 +8,16 @@ export const productNavCategories = [
     label: "COB",
   },
   {
-    value: "outdoor light",
-    label: "Outdoor Light",
+    value: "wall",
+    label: "Wall",
+  },
+  {
+    value: "pendant",
+    label: "Pendant",
+  },
+  {
+    value: "outdoor",
+    label: "Outdoor",
   },
 ];
 

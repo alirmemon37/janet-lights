@@ -37,7 +37,7 @@ const lightSchema = {
       title: "Category",
       validation: (Rule: { required: () => any }) => Rule.required(),
       options: {
-        list: ["chandlier", "wall", "pendant", "outdoor", "cob", "other"],
+        list: ["chandelier", "wall", "pendant", "outdoor", "cob", "other"],
       },
     },
     {
