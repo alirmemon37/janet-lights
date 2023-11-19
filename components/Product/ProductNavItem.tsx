@@ -1,12 +1,10 @@
-import React from "react";
-
-interface ProductNavItemProps {
+interface Props {
   label: string;
   active: boolean;
   onClick: () => void;
 }
 
-const ProductNavItem = ({ label, active, onClick }: ProductNavItemProps) => {
+const ProductNavItem = ({ label, active, onClick }: Props) => {
   return (
     <div
       className={`cursor-pointer ${active ? "font-bold orange_gradient" : ""}`}

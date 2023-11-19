@@ -1,46 +1,30 @@
-"use client";
-
 import React from "react";
-import Product from "@/types/types";
-import { useRouter, usePathname } from "next/navigation";
 import { clsx } from "clsx";
+import { Light } from "@/types/light";
+import Link from "next/link";
 
-interface ProductCardProps {
-  product: Product;
+interface Props {
+  product: Light;
 }
 
-const ProductCard = ({ product }: ProductCardProps) => {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleProductClick = () => {
-    // only redirect if on the products page
-    if (pathname === `/products`) {
-      router.push(`/products/${product.id}`);
-    }
-  };
-
+const ProductCard = ({ product }: Props) => {
   return (
-    <div
-      className={clsx(
-        "product_card",
-        pathname === "/products" && "cursor-pointer"
-      )}
-      onClick={handleProductClick}
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={product.productImageUrl}
-        className="w-full rounded-md mb-2"
-        alt={product.name}
-      />
-      <span className="font-medium font-inter text-xs text-gray-500 tracking-widest">
-        {product.company?.toUpperCase()}
-      </span>
-      <h3 className="text-base sm:text-lg font-satoshi font-semibold text-gray-900">
-        {product.name}
-      </h3>
-    </div>
+    <Link href={`/products/${product.slug}`}>
+      <div className="product_card cursor-pointer">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={product.image}
+          className="w-full rounded-md mb-2"
+          alt={product.name}
+        />
+        <span className="font-medium font-inter text-xs text-gray-500 tracking-widest">
+          {product.company?.toUpperCase()}
+        </span>
+        <h3 className="text-base sm:text-lg font-satoshi font-semibold text-gray-900">
+          {product.name}
+        </h3>
+      </div>
+    </Link>
   );
 };
 
