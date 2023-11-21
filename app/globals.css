@@ -19,14 +19,14 @@
 }
 
 .contact_form {
-  @apply grid grid-cols-1 md:grid-cols-3 mt-10 w-full max-w-7xl gap-7 rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur bg-gradient-to-r from-amber-500 to-yellow-500 overflow-hidden
+  @apply grid grid-cols-1 md:grid-cols-3 w-full max-w-7xl gap-7 rounded-xl  overflow-hidden border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur
 }
 
 .contact_form_img {
   background-image: linear-gradient(
       to right bottom,
-      #eb974e59,
-      #e67d2259
+      #f59f0b40,
+      #eab20840
     ),
     url("/assets/contact-chandelier.jpg");
   background-size: cover;
@@ -127,6 +127,10 @@
 
 .blue_gradient_btn {
   @apply bg-gradient-to-r from-[#1c94f4] to-[#1273ea] hover:from-[#1273ea] hover:to-[#1c94f4] text-white font-semibold py-2.5 px-6 rounded-xl transition duration-300
+}
+
+.green_gradient_btn {
+  @apply bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-semibold py-2.5 px-6 rounded-xl transition duration-300
 }
 
 .head_text {
