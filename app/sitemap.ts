@@ -1,22 +1,37 @@
-import apiEndpoint from "@/utils/apiEndpoint"
-import { MetadataRoute } from "next"
+import { getLights } from "@/sanity/actions";
+import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const routes = ['', 'products', 'about', 'contact'].map((route) => {
-    return {
-      url: `${apiEndpoint}/${route}`,
-      lastModified: new Date().toISOString(),
-    }
-  })
+  const mode = process.env.NEXT_PUBLIC_NODE_MODE;
 
-  const response = await fetch(`${apiEndpoint}/products`)
-  const products = await response.json()
-  const productsRoutes = products.map((product: any) => {
-    return {
-      url: `${apiEndpoint}/products/${product.id}`,
-      lastModified: new Date().toISOString(),
-    }
-  })
+  let baseUrl: string = "";
+  switch (mode) {
+    case "development":
+      baseUrl = "http://localhost:3000";
+      break;
+    case "production":
+      baseUrl = "https://janet-lights-y3r2.vercel.app";
+      break;
+    default:
+      baseUrl = "https://janet-lights-y3r2.vercel.app";
+  }
 
-  return [...routes, ...productsRoutes]
+  // static routes
+  const routes = ["", "products", "about", "contact"].map((route) => {
+    return {
+      url: `${baseUrl}/${route}`,
+      lastModified: new Date().toISOString(),
+    };
+  });
+
+  // dynamic routes
+  const products = await getLights();
+  const productsRoutes = products.map((product) => {
+    return {
+      url: `${baseUrl}/products/${product.slug}`,
+      lastModified: new Date().toISOString(),
+    };
+  });
+
+  return [...routes, ...productsRoutes];
 }

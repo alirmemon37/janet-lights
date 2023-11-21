@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductNavItem from "./ProductNavItem";
 import { formUrlQuery } from "@/sanity/utils";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -11,6 +11,8 @@ const ProductCategoryTabs = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const [activeCategory, setActiveCategory] = useState<string | null>(category);
+
+  console.log("category", activeCategory);
 
   const handleCategoryClick = (category: string | null) => {
     let newUrl = "";
@@ -32,6 +34,11 @@ const ProductCategoryTabs = () => {
 
     router.push(newUrl, { scroll: false });
   };
+
+  useEffect(() => {
+    // Update activeCategory when the query parameter changes
+    setActiveCategory(category);
+  }, [category]);
 
   return (
     <div className="mt-16 flex flex-center gap-4 flex-wrap rounded-md border border-gray-200 bg-white py-2.5 font-satoshi px-10 text-base shadow-lg font-semibold">
