@@ -1,33 +1,6 @@
+import AboutService from "@/components/About/AboutService";
+import Image from "next/image";
 import React from "react";
-
-const AboutService = ({
-  serviceTitle,
-  serviceDescription,
-  ServiceIcon,
-  className,
-}: {
-  serviceTitle: string;
-  serviceDescription: string;
-  ServiceIcon: React.FC;
-  className?: string;
-}) => {
-  return (
-    <div className={`flex relative pb-12 ${className}`}>
-      <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
-        <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
-      </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-        <ServiceIcon />
-      </div>
-      <div className="flex-grow pl-4">
-        <h2 className="font-semibold title-font text-base text-gray-900 mb-1 tracking-wider">
-          {serviceTitle}
-        </h2>
-        <p className="leading-relaxed text-gray-600">{serviceDescription}</p>
-      </div>
-    </div>
-  );
-};
 
 const About = () => {
   return (
@@ -52,29 +25,28 @@ const About = () => {
             </p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
+            <Image
               src="https://source.unsplash.com/450x450/?chandelier"
+              width={450}
+              height={450}
+              alt=""
+              className="object-cover object-center rounded"
             />
           </div>
         </div>
       </div>
       <div className="text-gray-600 body-font">
-        <h1 className="text text-center">
+        <h2 className="text text-center">
           <span className="mt-5 text-3xl font-bold leading-[1.15] text-black sm:text-5xl text-center">
             Our Services
           </span>{" "}
-        </h1>
+        </h2>
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <div className="flex flex-wrap w-full">
             <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
               <AboutService
                 serviceTitle="Installation"
-                serviceDescription="Our skilled technicians are trained to install lights in
-                    various settings, including residential, commercial, and
-                    industrial spaces. We ensure safe and efficient
-                    installation, adhering to industry standards and guidelines."
+                serviceDescription="Our skilled technicians are trained to install lights in various settings, including residential, commercial, and industrial spaces. We ensure safe and efficient installation, adhering to industry standards and guidelines."
                 ServiceIcon={() => (
                   <svg
                     fill="none"
@@ -91,13 +63,7 @@ const About = () => {
               />
               <AboutService
                 serviceTitle="Light Repair and Maintenance"
-                serviceDescription="If you're experiencing issues with your lights, our
-                experienced technicians can diagnose and repair the problem.
-                Whether it's a flickering light, faulty wiring, or any
-                other electrical issue, we provide reliable repair services
-                to restore your lights to optimal functionality.We also
-                offers 2 years warranty services if there is any defect in
-                the light"
+                serviceDescription="If you're experiencing issues with your lights, our experienced technicians can diagnose and repair the problem. Whether it's a flickering light, faulty wiring, or any other electrical issue, we provide reliable repair services to restore your lights to optimal functionality.We also offers 2 years warranty services if there is any defect in the light"
                 ServiceIcon={() => (
                   <svg
                     fill="none"
@@ -114,14 +80,9 @@ const About = () => {
               />
               <AboutService
                 serviceTitle="Lighting Design Consultation"
-                serviceDescription="We understand that lighting plays a crucial role in creating
-              the desired ambiance and functionality of a space. Our team
-              of lighting design consultants can assist you in planning
-              and designing the ideal lighting scheme for your home,
-              office, or commercial establishment. We consider factors
-              such as aesthetics, energy efficiency, and lighting
-              requirements to create a tailored lighting design plan that
-              meets your specific needs."
+                serviceDescription={
+                  "We understand that lighting plays a crucial role in creating the desired ambiance and functionality of a space. Our team of lighting design consultants can assist you in planning and designing the ideal lighting scheme for your home, office, or commercial establishment. We consider factors such as aesthetics, energy efficiency, and lighting requirements to create a tailored lighting design plan that meets your specific needs."
+                }
                 ServiceIcon={() => (
                   <svg
                     fill="none"
@@ -139,14 +100,7 @@ const About = () => {
               />
               <AboutService
                 serviceTitle="Product Selection and Sales"
-                serviceDescription="As a trusted company, we offer a wide range of lights to
-              suit different applications and preferences. Our
-              knowledgeable staff can guide you in selecting the right
-              light products based on factors such as brightness, color
-              temperature, and energy efficiency. We ensure that you have
-              access to high-quality lights from reputable manufacturers,
-              providing you with reliable and long-lasting lighting
-              solutions."
+                serviceDescription="As a trusted company, we offer a wide range of lights to suit different applications and preferences. Our knowledgeable staff can guide you in selecting the right light products based on factors such as brightness, color temperature, and energy efficiency. We ensure that you have access to high-quality lights from reputable manufacturers, providing you with reliable and long-lasting lighting solutions."
                 ServiceIcon={() => (
                   <svg
                     fill="none"
@@ -182,10 +136,12 @@ const About = () => {
                 className="pb-0"
               />
             </div>
-            <img
-              className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
+            <Image
               src="https://source.unsplash.com/450x450/?short chandelier"
-              alt="step"
+              width={450}
+              height={450}
+              className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
+              alt=""
             />
           </div>
         </div>

@@ -13,6 +13,7 @@ import {
   productCompanyRadioOptions,
 } from "@/utils/constants";
 import apiEndpoint from "@/utils/apiEndpoint";
+import Image from "next/image";
 
 const Create = () => {
   const [formData, setFormData] = useState<Product | null>({});
@@ -22,7 +23,9 @@ const Create = () => {
   const [isSnackbarOpen, setIsSnackbarOpen] = useState<boolean>(false);
 
   const handleProductDataChange = (
-    event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -88,11 +91,12 @@ const Create = () => {
         >
           {productImage ? (
             <label htmlFor="productImage">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 className="absolute top-0 left-0 -z-10 object-cover min-h-[300px] h-[100%] w-[100%] cursor-pointer rounded-2xl"
                 src={productImage}
                 alt="PFP"
+                width={400}
+                height={400}
               />
             </label>
           ) : (

@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
         port: "",
       },
     ],
